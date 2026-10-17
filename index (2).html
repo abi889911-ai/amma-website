@@ -1,0 +1,1184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Little Steps Preschool - Admission Enquiry</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #FF6B6B;
+            --secondary-color: #4ECDC4;
+            --accent-color: #FFE66D;
+            --text-dark: #2C3E50;
+            --text-light: #7F8C8D;
+            --bg-light: #F8F9FA;
+            --bg-white: #FFFFFF;
+            --border-color: #E0E0E0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            background: var(--bg-white);
+        }
+
+        /* Header & Navigation */
+        header {
+            background: var(--bg-white);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 20px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 32px;
+            height: 32px;
+            background: var(--primary-color);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+
+        nav {
+            display: flex;
+            gap: 32px;
+            align-items: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--primary-color);
+        }
+
+        .cta-button {
+            background: var(--primary-color);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            transition: background 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .cta-button:hover {
+            background: #FF5252;
+        }
+
+        /* Hero Section */
+        .hero {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 80px 24px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            align-items: center;
+        }
+
+        .hero-content h1 {
+            font-size: clamp(32px, 8vw, 56px);
+            line-height: 1.2;
+            margin-bottom: 24px;
+            color: var(--text-dark);
+        }
+
+        .hero-content p {
+            font-size: 16px;
+            color: var(--text-light);
+            margin-bottom: 32px;
+            line-height: 1.8;
+        }
+
+        .hero-ctas {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+            margin-bottom: 32px;
+        }
+
+        .btn-primary {
+            background: var(--primary-color);
+            color: white;
+            padding: 16px 32px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s;
+            border: none;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-primary:hover {
+            background: #FF5252;
+        }
+
+        .btn-secondary {
+            background: white;
+            color: var(--primary-color);
+            padding: 16px 32px;
+            border: 2px solid var(--primary-color);
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .trust-badge {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            color: var(--text-light);
+        }
+
+        .trust-icon {
+            width: 20px;
+            height: 20px;
+            background: var(--secondary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 12px;
+        }
+
+        .hero-image {
+            width: 100%;
+            aspect-ratio: 490/460;
+            background: linear-gradient(135deg, #FFE66D 0%, #FF6B6B 100%);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* Section Header */
+        .section-header {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+
+        .tag {
+            display: inline-block;
+            background: #F0F8FF;
+            color: var(--secondary-color);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            text-transform: uppercase;
+        }
+
+        .section-header h2 {
+            font-size: clamp(28px, 6vw, 48px);
+            line-height: 1.2;
+            margin-bottom: 24px;
+            color: var(--text-dark);
+        }
+
+        .section-header p {
+            font-size: 16px;
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        /* Achievements Section */
+        .achievements {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 96px 24px;
+            background: var(--bg-light);
+        }
+
+        .achievements .section-header {
+            margin-bottom: 64px;
+        }
+
+        .achievement-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+        }
+
+        .achievement-card {
+            background: white;
+            padding: 32px;
+            border-radius: 12px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .achievement-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+        }
+
+        .achievement-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--accent-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 16px;
+            font-size: 24px;
+        }
+
+        .achievement-card h3 {
+            font-size: 20px;
+            margin: 16px 0;
+            color: var(--text-dark);
+        }
+
+        .achievement-card p {
+            font-size: 14px;
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+
+        /* Form Section */
+        .admission-form {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 96px 24px;
+        }
+
+        .form-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            align-items: stretch;
+        }
+
+        .form-left {
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+        }
+
+        .form-image {
+            width: 100%;
+            aspect-ratio: 490/320;
+            background: linear-gradient(135deg, #4ECDC4 0%, #FF6B6B 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 14px;
+            margin-bottom: 16px;
+        }
+
+        .form-info {
+            background: var(--bg-light);
+            padding: 32px;
+            border-radius: 12px;
+        }
+
+        .form-info h3 {
+            font-size: 20px;
+            margin-bottom: 24px;
+            color: var(--text-dark);
+        }
+
+        .info-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin-bottom: 32px;
+        }
+
+        .info-item {
+            display: flex;
+            gap: 12px;
+        }
+
+        .info-icon {
+            width: 20px;
+            height: 20px;
+            background: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 12px;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .info-item p {
+            font-size: 14px;
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        /* Form Right */
+        .form-right {
+            background: white;
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+        }
+
+        .form-right h3 {
+            font-size: 28px;
+            margin-bottom: 12px;
+            color: var(--text-dark);
+        }
+
+        .form-right > p {
+            font-size: 14px;
+            color: var(--text-light);
+            margin-bottom: 32px;
+        }
+
+        .form-group {
+            margin-bottom: 24px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 8px;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 14px 16px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            font-size: 14px;
+            font-family: inherit;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.1);
+        }
+
+        .form-group input::placeholder {
+            color: var(--text-light);
+        }
+
+        .submit-btn {
+            width: 100%;
+            background: var(--primary-color);
+            color: white;
+            padding: 16px 24px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 16px;
+            transition: background 0.3s;
+        }
+
+        .submit-btn:hover:not(:disabled) {
+            background: #FF5252;
+        }
+
+        .submit-btn:disabled {
+            background: #CCCCCC;
+            cursor: not-allowed;
+        }
+
+        .form-note {
+            font-size: 12px;
+            color: var(--text-light);
+            text-align: center;
+        }
+
+        .success-message {
+            display: none;
+            background: #D4EDDA;
+            color: #155724;
+            padding: 16px;
+            border-radius: 8px;
+            margin-bottom: 16px;
+            font-size: 14px;
+        }
+
+        .error-message {
+            display: none;
+            background: #F8D7DA;
+            color: #721C24;
+            padding: 16px;
+            border-radius: 8px;
+            margin-bottom: 16px;
+            font-size: 14px;
+        }
+
+        /* Services Section */
+        .services {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 96px 24px;
+            background: var(--bg-light);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 32px;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 32px rgba(0,0,0,0.12);
+        }
+
+        .service-image {
+            width: 100%;
+            aspect-ratio: 394/192;
+            background: linear-gradient(135deg, #FFE66D 0%, #4ECDC4 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 12px;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .service-content {
+            padding: 24px;
+        }
+
+        .service-tag {
+            display: inline-block;
+            background: #F0F8FF;
+            color: var(--secondary-color);
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+        }
+
+        .service-card h3 {
+            font-size: 18px;
+            margin-bottom: 12px;
+            color: var(--text-dark);
+        }
+
+        .service-card p {
+            font-size: 14px;
+            color: var(--text-light);
+            line-height: 1.7;
+            margin-bottom: 16px;
+        }
+
+        .service-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            transition: gap 0.3s;
+        }
+
+        .service-link:hover {
+            gap: 12px;
+        }
+
+        /* About Section */
+        .about {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 96px 24px;
+        }
+
+        .about-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            align-items: center;
+        }
+
+        .about-image {
+            width: 100%;
+            aspect-ratio: 490/520;
+            background: linear-gradient(135deg, #FF6B6B 0%, #FFE66D 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 14px;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .about-content h2 {
+            font-size: clamp(28px, 6vw, 42px);
+            line-height: 1.2;
+            margin-bottom: 32px;
+            color: var(--text-dark);
+        }
+
+        .about-content p {
+            font-size: 15px;
+            color: var(--text-light);
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        /* CTA Section */
+        .final-cta {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 96px 24px;
+        }
+
+        .cta-box {
+            background: linear-gradient(135deg, #FF6B6B 0%, #4ECDC4 100%);
+            border-radius: 16px;
+            padding: 64px;
+            color: white;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            align-items: center;
+        }
+
+        .cta-content h2 {
+            font-size: clamp(28px, 6vw, 42px);
+            line-height: 1.2;
+            margin-bottom: 24px;
+        }
+
+        .cta-content p {
+            font-size: 16px;
+            line-height: 1.8;
+            margin-bottom: 16px;
+        }
+
+        .cta-image {
+            width: 100%;
+            aspect-ratio: 499/481;
+            background: rgba(255,255,255,0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .cta-button-white {
+            background: white;
+            color: var(--primary-color);
+            padding: 14px 28px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: background 0.3s;
+            margin-top: 24px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .cta-button-white:hover {
+            background: #F0F0F0;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--text-dark);
+            color: white;
+            padding: 64px 24px 24px;
+            margin-top: 96px;
+        }
+
+        .footer-container {
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 48px;
+            margin-bottom: 48px;
+            padding-bottom: 48px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .footer-section h4 {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .footer-section p {
+            font-size: 14px;
+            color: rgba(255,255,255,0.7);
+            line-height: 1.8;
+            margin-bottom: 12px;
+        }
+
+        .footer-section a {
+            display: block;
+            font-size: 14px;
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            margin-bottom: 12px;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            font-size: 13px;
+            color: rgba(255,255,255,0.5);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav {
+                display: none;
+            }
+
+            .hero,
+            .form-container,
+            .about-container,
+            .cta-box {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+
+            .hero-ctas {
+                flex-direction: column;
+            }
+
+            .btn-primary,
+            .btn-secondary {
+                width: 100%;
+                text-align: center;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .form-right {
+                padding: 24px;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <a href="#" class="logo-section">
+                <div class="logo-icon">LS</div>
+                <span>Little Steps</span>
+            </a>
+            <nav>
+                <a href="#hero">Home</a>
+                <a href="#about">About Us</a>
+                <a href="#services">Our Programs</a>
+                <a href="#achievements">Achievements</a>
+                <a href="#form">Admissions</a>
+                <a href="#contact">Contact</a>
+            </nav>
+            <button class="cta-button" onclick="scrollToForm()">
+                Enquire Now
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="hero-content">
+            <h1>Little Steps Today. A Brighter Tomorrow.</h1>
+            <p>Welcome to a place where your child's curiosity is celebrated, their creativity is nurtured, and every day brings new discoveries. At Little Steps, we believe in creating a warm, engaging environment where preschoolers can grow at their own pace.</p>
+            <p>Our carefully designed programs and caring teachers make learning fun—one little step at a time.</p>
+
+            <div class="hero-ctas">
+                <button class="btn-primary" onclick="scrollToForm()">
+                    Schedule Admission Enquiry →
+                </button>
+                <button class="btn-secondary" onclick="scrollToServices()">
+                    Explore Our Programs
+                </button>
+            </div>
+
+            <div class="trust-badge">
+                <div class="trust-icon">✓</div>
+                <span>Join 500+ Happy Families at Little Steps</span>
+            </div>
+        </div>
+        <div class="hero-image">
+            Child joyfully stacking wooden blocks in classroom
+        </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section id="achievements" class="achievements">
+        <div class="section-header">
+            <div class="tag">Our Impact</div>
+            <h2>More Than Just Learning. Growing Confident Kids.</h2>
+            <p>Every child is unique, and we celebrate their individuality. Our programs focus on three core areas that matter most for early childhood development.</p>
+        </div>
+
+        <div class="achievement-cards">
+            <div class="achievement-card">
+                <div class="achievement-icon">🌟</div>
+                <h3>Growing Confidence</h3>
+                <p>Helping children express themselves, make friends, and discover what they can do.</p>
+            </div>
+            <div class="achievement-card">
+                <div class="achievement-icon">🔍</div>
+                <h3>Learning Through Discovery</h3>
+                <p>Encouraging curiosity, creativity, and problem-solving through age-appropriate activities.</p>
+            </div>
+            <div class="achievement-card">
+                <div class="achievement-icon">👣</div>
+                <h3>Little Steps Towards Independence</h3>
+                <p>Celebrating the everyday skills that help children become more independent and confident.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Admission Form Section -->
+    <section id="form" class="admission-form">
+        <div class="section-header">
+            <div class="tag">Admission</div>
+            <h2>Their First School Memories Start Here.</h2>
+            <p>Every child deserves a place where they feel welcomed, understood, and encouraged to be themselves. Fill out the form below and our admissions team will contact you with more information about our programs and next steps.</p>
+        </div>
+
+        <div class="form-container">
+            <div class="form-left">
+                <div class="form-image">
+                    Teacher gently welcoming child and parent at preschool
+                </div>
+                <div class="form-info">
+                    <h3>Have questions about admissions?</h3>
+                    <div class="info-list">
+                        <div class="info-item">
+                            <div class="info-icon">📍</div>
+                            <p><strong>Location:</strong> [School Address], [City], [State] - PIN [000000]</p>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-icon">📱</div>
+                            <p><strong>Phone:</strong> +91 [Phone Number] | [Alternative Number]</p>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-icon">📧</div>
+                            <p><strong>Email:</strong> admissions@littlesteps.edu | info@littlesteps.edu</p>
+                        </div>
+                    </div>
+                    <div class="info-item" style="margin-top: 32px;">
+                        <div class="info-icon" style="background: var(--secondary-color);">💬</div>
+                        <p><strong>Office Hours:</strong> Monday - Friday, 9:00 AM - 5:00 PM | Saturday, 10:00 AM - 2:00 PM</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-right">
+                <h3>Admission Enquiry</h3>
+                <p>Please fill in your information below and we will contact you shortly.</p>
+
+                <div class="success-message" id="successMessage">
+                    ✓ Thank you! Your enquiry has been submitted successfully. We'll contact you soon.
+                </div>
+                <div class="error-message" id="errorMessage">
+                    ✗ Error submitting form. Please try again.
+                </div>
+
+                <form id="admissionForm" onsubmit="handleSubmit(event)">
+                    <div class="form-group">
+                        <label for="name">Your Name *</label>
+                        <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            placeholder="Enter your full name"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="Enter your email address"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone Number *</label>
+                        <input
+                            type="tel"
+                            id="phone"
+                            name="phone"
+                            placeholder="Enter your contact number"
+                            required
+                        >
+                    </div>
+
+                    <button type="submit" class="submit-btn" id="submitBtn">
+                        Submit Enquiry →
+                    </button>
+                    <p class="form-note">
+                        We respect your privacy. Your information is secure with us.
+                    </p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="section-header">
+            <div class="tag">Our Programs</div>
+            <h2>More Than a Classroom. A World of Little Discoveries.</h2>
+            <p>Children learn best when they can touch, explore, imagine, ask questions, and have fun. Our activities make learning a natural part of their day while helping them develop essential skills at their own pace.</p>
+        </div>
+
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-image">Play-Based Learning with colorful building blocks</div>
+                <div class="service-content">
+                    <span class="service-tag">Program 1</span>
+                    <h3>Play-Based Learning</h3>
+                    <p>From colours and shapes to letters and numbers, children explore the basics through enjoyable activities rather than pressure or rote learning.</p>
+                    <a href="#" class="service-link">Learn More →</a>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <div class="service-image">Children painting with watercolours and finger paints</div>
+                <div class="service-content">
+                    <span class="service-tag">Program 2</span>
+                    <h3>Creative Arts and Crafts</h3>
+                    <p>Drawing, painting, colouring, and hands-on activities help little minds express ideas, develop imagination, and strengthen fine motor skills.</p>
+                    <a href="#" class="service-link">Learn More →</a>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <div class="service-image">Children engaging in group activities</div>
+                <div class="service-content">
+                    <span class="service-tag">Program 3</span>
+                    <h3>Social and Emotional Development</h3>
+                    <p>Through group activities and everyday interactions, children learn to share, take turns, make friends, and express their feelings.</p>
+                    <a href="#" class="service-link">Learn More →</a>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <div class="service-image">Teacher reading picture book aloud to engaged young children</div>
+                <div class="service-content">
+                    <span class="service-tag">Program 4</span>
+                    <h3>Language and Communication</h3>
+                    <p>Stories, rhymes, conversations, and songs encourage children to listen, speak, build vocabulary, and communicate with growing confidence.</p>
+                    <a href="#" class="service-link">Learn More →</a>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <div class="service-image">Children engaged in physical play activities</div>
+                <div class="service-content">
+                    <span class="service-tag">Program 5</span>
+                    <h3>Physical Play and Movement</h3>
+                    <p>Age-appropriate movement and play activities help develop coordination, balance, motor skills, and an active approach to everyday life.</p>
+                    <a href="#" class="service-link">Learn More →</a>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <div class="service-image">Children learning practical life skills</div>
+                <div class="service-content">
+                    <span class="service-tag">Program 6</span>
+                    <h3>Everyday Life Skills</h3>
+                    <p>Simple routines encourage children to become more independent, care for their belongings, follow instructions, and take pride in accomplishments.</p>
+                    <a href="#" class="service-link">Learn More →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="about-container">
+            <div class="about-image">
+                Indian preschool teacher storytelling with attentive children
+            </div>
+            <div class="about-content">
+                <div class="tag">About Us</div>
+                <h2>A Small Beginning Can Make a Big Difference.</h2>
+                <p>Every child deserves a place where they feel welcomed, understood, and encouraged to be themselves.</p>
+                <p>At Little Steps, we believe the early years are about much more than learning letters and numbers. They are about discovering new things, building friendships, finding confidence, and learning to face the world one little step at a time.</p>
+                <p>Our aim is to make those first experiences away from home feel happy, meaningful, and comfortable. We want children to look forward to coming to school, feel proud of what they learn, and leave each day with something new to share.</p>
+                <p>We also understand that a child's first school is a big step for the whole family. Parents place enormous trust in the people who care for their little ones. We value that trust and believe that a strong partnership between home and school helps children thrive.</p>
+                <p><strong>Our promise is simple:</strong> to make every child's early learning journey a little more joyful, a little more confident, and full of opportunities to grow.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="final-cta">
+        <div class="cta-box">
+            <div class="cta-content">
+                <div class="tag" style="background: rgba(255,255,255,0.2); color: white;">Call to Action</div>
+                <h2>Ready to Begin Your Little One's Journey?</h2>
+                <p>The first day of school is the beginning of so many beautiful things — new friends, new discoveries, and new reasons to smile.</p>
+                <p>Let us help make that first step a happy one. Get in touch with us to learn more about our classes and admission process.</p>
+                <button class="cta-button-white" onclick="scrollToForm()">
+                    Connect with Us →
+                </button>
+            </div>
+            <div class="cta-image">
+                Happy preschool child wearing backpack outdoors
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>🎨 Little Steps</h4>
+                    <p><strong>Little steps. Lifelong possibilities.</strong></p>
+                    <p>Nurturing confident, compassionate, and curious young minds through gentle play-based learning and modern developmental care.</p>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <a href="#hero">Home</a>
+                    <a href="#about">About Us</a>
+                    <a href="#services">Our Programs</a>
+                    <a href="#achievements">Achievements</a>
+                    <a href="#form">Admissions</a>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Contact Information</h4>
+                    <a href="tel:+919876543210">📞 +91 98765 43210</a>
+                    <a href="mailto:admissions@littlesteps.edu">📧 admissions@littlesteps.edu</a>
+                    <a href="#">📍 [School Address], [City], [State]</a>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Admissions</h4>
+                    <p>Have questions about admissions?</p>
+                    <button class="cta-button" style="margin-top: 12px;" onclick="scrollToForm()">
+                        Start Enquiry
+                    </button>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 Little Steps Preschool. All rights reserved. | <a href="#" style="color: inherit; text-decoration: none;">Privacy Policy</a> | <a href="#" style="color: inherit; text-decoration: none;">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // AppScript URL
+        const APPSCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxYeZWJFS4tOxcuFtVVIWuMJLsXZ_7m_MIZUx-X77Hi8AguS7_QdLlAbdQYLJBAQfkW/exec';
+
+        // Helper functions
+        function scrollToForm() {
+            document.getElementById('form').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function scrollToServices() {
+            document.getElementById('services').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Form submission handler
+        function handleSubmit(event) {
+            event.preventDefault();
+
+            const submitBtn = document.getElementById('submitBtn');
+            const successMsg = document.getElementById('successMessage');
+            const errorMsg = document.getElementById('errorMessage');
+            const form = document.getElementById('admissionForm');
+
+            // Hide messages
+            successMsg.style.display = 'none';
+            errorMsg.style.display = 'none';
+
+            // Get form data
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+
+            // Validate
+            if (!name || !email || !phone) {
+                errorMsg.textContent = '✗ Please fill in all required fields.';
+                errorMsg.style.display = 'block';
+                return;
+            }
+
+            // Validate email format
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                errorMsg.textContent = '✗ Please enter a valid email address.';
+                errorMsg.style.display = 'block';
+                return;
+            }
+
+            // Validate phone format (basic check)
+            const phoneRegex = /^[0-9\-\+\(\)\s]{7,}$/;
+            if (!phoneRegex.test(phone)) {
+                errorMsg.textContent = '✗ Please enter a valid phone number.';
+                errorMsg.style.display = 'block';
+                return;
+            }
+
+            // Disable button and show loading state
+            submitBtn.disabled = true;
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = 'Submitting...';
+
+            // Create query params
+            const params = new URLSearchParams({
+                name: name,
+                email: email,
+                phone: phone
+            });
+
+            // Send via GET method to bypass CORS
+            fetch(APPSCRIPT_URL + '?' + params.toString(), {
+                method: 'GET',
+                mode: 'no-cors'
+            })
+            .then(() => {
+                // Success - even if we can't read response due to CORS
+                successMsg.style.display = 'block';
+                form.reset();
+                submitBtn.disabled = false;
+                submitBtn.textContent = originalText;
+
+                // Hide success message after 5 seconds
+                setTimeout(() => {
+                    successMsg.style.display = 'none';
+                }, 5000);
+            })
+            .catch((error) => {
+                errorMsg.textContent = '✗ Network error. Please try again.';
+                errorMsg.style.display = 'block';
+                submitBtn.disabled = false;
+                submitBtn.textContent = originalText;
+            });
+        }
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href !== '#') {
+                    e.preventDefault();
+                    const element = document.querySelector(href);
+                    if (element) {
+                        element.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
